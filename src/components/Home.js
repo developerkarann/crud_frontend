@@ -42,7 +42,8 @@ export default function Home() {
 
     const deleteUser = async (id) => {
         // const res2 = await fetch(`http://localhost:8000/api/deleteuser/${id}`, {
-        const res2 = await fetch(`https://crudapp-ml3l.onrender.com/api/deleteuser/${id}`, {
+        // const res2 = await fetch(`https://crudapp-ml3l.onrender.com/api/deleteuser/${id}`, {
+        const res2 = await fetch(`${server}/api/deleteuser/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
