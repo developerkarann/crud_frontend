@@ -10,6 +10,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Card } from '@mui/material';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {server} from '../server'
 
 import { useParams, Link, useNavigate } from "react-router-dom"
 
@@ -27,7 +28,8 @@ export default function Detail() {
     const getData = async () => {
 
         // const response = await fetch(`http://localhost:8000/api/getuser/${id}`, {
-        const response = await fetch(`https://crudapp-ml3l.onrender.com/api/getuser/${id}`, {
+        // const response = await fetch(`https://crudapp-ml3l.onrender.com/api/getuser/${id}`, {
+        const response = await fetch(`${server}/api/getuser/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {server} from '../server'
 
 export default function Edit() {
 
@@ -40,7 +41,8 @@ export default function Edit() {
   const getData = async () => {
 
     // const response = await fetch(`http://localhost:8000/api/getuser/${id}`, {
-    const response = await fetch(`https://crudapp-ml3l.onrender.com/api/getuser/${id}`, {
+    // const response = await fetch(`https://crudapp-ml3l.onrender.com/api/getuser/${id}`, {
+    const response = await fetch(`${server}/api/getuser/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -67,7 +69,7 @@ export default function Edit() {
 
     const { name, email, age, mobile, work, add, desc } = inpval
     // const res2 = await fetch(`http://localhost:8000/api/updateuser/${id}`,{
-    const res2 = await fetch(`https://crudapp-ml3l.onrender.com/api/updateuser/${id}`, {
+    const res2 = await fetch(`${server}/api/updateuser/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

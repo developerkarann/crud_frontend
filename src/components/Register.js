@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { Link } from 'react-router-dom'
+import {server} from '../server'
 
 export default function Register() {
 
@@ -36,7 +37,8 @@ export default function Register() {
 
     const { name, email, age, mobile, work, add, desc } = inpval;
     // const response = await fetch('http://localhost:8000/api/register', {
-    const response = await fetch('https://crudapp-ml3l.onrender.com/api/register', {
+    // const response = await fetch('https://crudapp-ml3l.onrender.com/api/register', {
+    const response = await fetch(`${server}/api/register`, {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
